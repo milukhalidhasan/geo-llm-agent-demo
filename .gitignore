@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+outputs/
+# Traces from ad-hoc ask.py runs; evaluation traces are kept (see README).
+traces/*
+!traces/eval/
