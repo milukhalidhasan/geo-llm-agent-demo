@@ -6,3 +6,4 @@ outputs/
 # Traces from ad-hoc ask.py runs; evaluation traces are kept (see README).
 traces/*
 !traces/eval/
+!traces/eval_run1_no_fallback/

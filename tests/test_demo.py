@@ -170,3 +170,25 @@ def test_grounding_check():
     steps = [{"type": "tool", "result": {"value": 2.98154}}]
     assert grounded("2.98 ha", steps, "number") is True
     assert grounded("3.40 ha", steps, "number") is False
+
+
+def test_ollama_empty_reply_uses_text_fallback():
+    """An empty reply (a tool call Ollama could not parse) is retried in plain text."""
+    from geo_agent.llm import OllamaBackend
+
+    class FakeOllama(OllamaBackend):
+        def __init__(self):
+            super().__init__()
+            self.payloads = []
+
+        def _post(self, path, payload):
+            self.payloads.append(payload)
+            if len(self.payloads) == 1:
+                return {"message": {"content": ""}, "eval_count": 41}
+            return {"message": {"content": '{"name": "reproject_layer", "arguments": {"layer": "plots"}}'}}
+
+    b = FakeOllama()
+    reply = b.chat([{"role": "user", "content": "q"}], [{"function": {"name": "reproject"}}])
+    assert "tools" in b.payloads[0] and "tools" not in b.payloads[1]
+    assert reply.tool_calls[0].name == "reproject_layer" and reply.tool_calls[0].from_text
+    assert reply.raw["text_fallback"] is True

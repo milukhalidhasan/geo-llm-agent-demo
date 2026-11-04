@@ -121,6 +121,7 @@ class Agent:
             steps.append({"type": "llm", "step": i, "content": reply.content,
                           "tool_calls": [{"name": c.name, "arguments": c.arguments, "from_text": c.from_text}
                                          for c in reply.tool_calls],
+                          "text_fallback": bool(reply.raw and reply.raw.get("text_fallback")),
                           "seconds": round(time.time() - t1, 2)})
             self._log(f"[{i}] model: {reply.content.strip()[:200]!r} calls={[c.name for c in reply.tool_calls]}")
             if not reply.tool_calls:
@@ -130,7 +131,8 @@ class Agent:
                     break
                 # No tool call and no answer: remind the model of the format once per turn.
                 messages.append({"role": "assistant", "content": reply.content})
-                messages.append({"role": "user", "content": "Continue: call a tool, or give the final line "
+                messages.append({"role": "user", "content": "Your reply had no tool call and no ANSWER line. "
+                                                            "Call a tool now, or give the final line "
                                                             "'ANSWER: <value> <unit>'."})
                 continue
             messages.append({"role": "assistant", "content": reply.content,

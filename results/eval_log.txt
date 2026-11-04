@@ -1,0 +1,111 @@
+[1/72] off   Q01 r0 ok  answer='24' ref=24  (15s, 15s total)
+[2/72] off   Q01 r1 ok  answer='24' ref=24  (10s, 25s total)
+[3/72] off   Q01 r2 ok  answer='24' ref=24  (10s, 35s total)
+[4/72] off   Q02 r0 BAD answer='56781.81 m�' ref=4326 wrong_workflow (58s, 94s total)
+[5/72] off   Q02 r1 BAD answer='5.678180905259124 ha' ref=4326 wrong_workflow (65s, 158s total)
+[6/72] off   Q02 r2 BAD answer='5.678180905259124 hectares' ref=4326 wrong_workflow (110s, 269s total)
+[7/72] off   Q03 r0 BAD answer='5.141405340327e-12 m�' ref=1 measured_in_degrees (451s, 721s total)
+[8/72] off   Q03 r1 BAD answer='24' ref=1 wrong_workflow (170s, 892s total)
+[9/72] off   Q03 r2 ok  answer='1' ref=1  (58s, 950s total)
+[10/72] off   Q04 r0 ok  answer='2.98 ha' ref=2.9815  (136s, 1087s total)
+[11/72] off   Q04 r1 ok  answer='2.9815407449367908 ha' ref=2.9815  (110s, 1197s total)
+[12/72] off   Q04 r2 ok  answer='2.9815407449367908 ha' ref=2.9815  (105s, 1302s total)
+[13/72] off   Q05 r0 ok  answer='1.792277115093599 km' ref=1.7923  (59s, 1360s total)
+[14/72] off   Q05 r1 ok  answer='1.792277115093599 km' ref=1.7923  (65s, 1425s total)
+[15/72] off   Q05 r2 ok  answer='1.792277115093599 <unit: km>' ref=1.7923  (74s, 1499s total)
+[16/72] off   Q06 r0 BAD answer='0' ref=12 crs_mismatch (28s, 1527s total)
+[17/72] off   Q06 r1 BAD answer='0' ref=12 crs_mismatch (27s, 1554s total)
+[18/72] off   Q06 r2 BAD answer='0' ref=12 crs_mismatch (26s, 1581s total)
+[19/72] off   Q07 r0 BAD answer='village_id 1' ref=Bhawal crs_mismatch (66s, 1647s total)
+[20/72] off   Q07 r1 BAD answer='24 m�' ref=Bhawal crs_mismatch (133s, 1780s total)
+[21/72] off   Q07 r2 BAD answer=None ref=Bhawal llm_error (373s, 2153s total)
+[22/72] off   Q08 r0 BAD answer='5.678180905259124 ha' ref=1.8627 wrong_workflow (172s, 2325s total)
+[23/72] off   Q08 r1 BAD answer=None ref=1.8627 no_answer_max_steps (270s, 2595s total)
+[24/72] off   Q08 r2 BAD answer='5.68 ha' ref=1.8627 wrong_workflow (123s, 2719s total)
+[25/72] off   Q09 r0 BAD answer='13' ref=4 wrong_workflow (74s, 2793s total)
+[26/72] off   Q09 r1 BAD answer='13' ref=4 wrong_workflow (80s, 2872s total)
+[27/72] off   Q09 r2 BAD answer='13' ref=4 wrong_workflow (55s, 2928s total)
+[28/72] off   Q10 r0 BAD answer='0.00002497 ha' ref=0.256 measured_in_degrees (31s, 2959s total)
+[29/72] off   Q10 r1 BAD answer='0.5 ha' ref=0.256 answer_not_in_tool_output (37s, 2997s total)
+[30/72] off   Q10 r2 BAD answer='0.0002497112512140373 ha' ref=0.256 measured_in_degrees (36s, 3032s total)
+[31/72] off   Q11 r0 BAD answer='0.6279 mean_ndvi' ref=0.5901 wrong_workflow (32s, 3065s total)
+[32/72] off   Q11 r1 BAD answer='0.36704567074775696' ref=0.5901 wrong_workflow (31s, 3095s total)
+[33/72] off   Q11 r2 BAD answer='0.36704567074775696' ref=0.5901 wrong_workflow (34s, 3129s total)
+[34/72] off   Q12 r0 BAD answer='0.7828' ref=P08 wrong_workflow (45s, 3174s total)
+[35/72] off   Q12 r1 BAD answer='0.7828' ref=P08 wrong_workflow (158s, 3332s total)
+[36/72] off   Q12 r2 BAD answer=None ref=P08 llm_error (1634s, 4968s total)
+[37/72] warn  Q01 r0 ok  answer='24' ref=24  (15s, 4984s total)
+[38/72] warn  Q01 r1 ok  answer='24' ref=24  (9s, 4994s total)
+[39/72] warn  Q01 r2 ok  answer='24' ref=24  (9s, 5003s total)
+[40/72] warn  Q02 r0 BAD answer='57981.81 m�' ref=4326 wrong_workflow (127s, 5130s total)
+[41/72] warn  Q02 r1 BAD answer='5.678 ha' ref=4326 wrong_workflow (81s, 5211s total)
+[42/72] warn  Q02 r2 BAD answer='5.798180905257553 ha' ref=4326 wrong_workflow (149s, 5361s total)
+[43/72] warn  Q03 r0 BAD answer=None ref=1 no_answer_max_steps (175s, 5535s total)
+[44/72] warn  Q03 r1 BAD answer='24' ref=1 wrong_workflow (37s, 5572s total)
+[45/72] warn  Q03 r2 ok  answer='1' ref=1  (18s, 5590s total)
+[46/72] warn  Q04 r0 ok  answer='2.98 ha' ref=2.9815  (104s, 5694s total)
+[47/72] warn  Q04 r1 ok  answer='2.9815407449367908 ha' ref=2.9815  (117s, 5811s total)
+[48/72] warn  Q04 r2 ok  answer='2.9815407449367908 ha' ref=2.9815  (109s, 5920s total)
+[49/72] warn  Q05 r0 BAD answer='1.7245490285813523' ref=1.7923 measured_in_degrees (97s, 6017s total)
+[50/72] warn  Q05 r1 ok  answer='1.792 km' ref=1.7923  (31s, 6048s total)
+[51/72] warn  Q05 r2 ok  answer='1.792 km' ref=1.7923  (31s, 6080s total)
+[52/72] warn  Q06 r0 BAD answer='0' ref=12 crs_mismatch (32s, 6111s total)
+[53/72] warn  Q06 r1 BAD answer='0' ref=12 crs_mismatch (31s, 6142s total)
+[54/72] warn  Q06 r2 BAD answer='0' ref=12 crs_mismatch (30s, 6172s total)
+[55/72] warn  Q07 r0 BAD answer=None ref=Bhawal no_answer_max_steps (184s, 6356s total)
+[56/72] warn  Q07 r1 BAD answer=None ref=Bhawal llm_error (500s, 6857s total)
+[57/72] warn  Q07 r2 BAD answer=None ref=Bhawal no_answer_max_steps (206s, 7063s total)
+[58/72] warn  Q08 r0 BAD answer='5.678181 ha' ref=1.8627 wrong_workflow (158s, 7221s total)
+[59/72] warn  Q08 r1 BAD answer=None ref=1.8627 no_answer_max_steps (278s, 7499s total)
+Resuming: 59 runs already in runs.csv
+[60/72] warn  Q08 r2 BAD answer=None ref=1.8627 no_answer_max_steps (364s, 364s total)
+[61/72] warn  Q09 r0 BAD answer='13' ref=4 wrong_workflow (31s, 395s total)
+[62/72] warn  Q09 r1 BAD answer='13' ref=4 wrong_workflow (34s, 430s total)
+[63/72] warn  Q09 r2 BAD answer='13' ref=4 wrong_workflow (38s, 468s total)
+[64/72] warn  Q10 r0 BAD answer='2.816098848648267 ha' ref=0.256 measured_in_degrees (71s, 538s total)
+[65/72] warn  Q10 r1 BAD answer='0.5 ha' ref=0.256 answer_not_in_tool_output (47s, 585s total)
+[66/72] warn  Q10 r2 BAD answer='2.5e-10 ha' ref=0.256 measured_in_degrees (55s, 641s total)
+[67/72] warn  Q11 r0 BAD answer='0.6335575' ref=0.5901 wrong_workflow (68s, 709s total)
+[68/72] warn  Q11 r1 BAD answer='0.36704567074775696' ref=0.5901 wrong_workflow (39s, 748s total)
+[69/72] warn  Q11 r2 BAD answer='0.36704567074775696' ref=0.5901 wrong_workflow (42s, 791s total)
+[70/72] warn  Q12 r0 BAD answer='0.6188' ref=P08 wrong_workflow (64s, 855s total)
+[71/72] warn  Q12 r1 BAD answer='0.6501' ref=P08 wrong_workflow (162s, 1017s total)
+[72/72] warn  Q12 r2 BAD answer=None ref=P08 no_answer_max_steps (186s, 1203s total)
+
+Model: qwen2.5:3b. Runs per question: 3. Generated by `evaluate.py` on 2026-11-04.
+
+### Overall
+
+| Check mode | Runs | Finished | Correct | Answer found in tool output | Ran a measurement in degrees | Mean tool calls | Mean time (s) |
+|---|---|---|---|---|---|---|---|
+| off | 36 | 33 (92%) | 10 (28%) | 31 (86%) | 6 | 3.8 | 138 |
+| warn | 36 | 29 (81%) | 9 (25%) | 27 (75%) | 6 | 4.6 | 104 |
+
+### Per question (correct runs / total)
+
+| Question | Tests | Reference | off | warn |
+|---|---|---|---|---|
+| Q01: How many farm plots are in the dataset? | basic count | 24 | 3/3 | 3/3 |
+| Q02: What is the EPSG code of the coordinate reference system of the plots layer? | CRS inspection | 4326 | 0/3 | 0/3 |
+| Q03: How many farm plots have an invalid geometry? | geometry validity | 1 | 1/3 | 1/3 |
+| Q04: What is the total area of rice plots in hectares? | filter + area; plots stored in degrees | 2.9815 | 3/3 | 3/3 |
+| Q05: What is the total length of all roads in kilometres? | length; roads stored in degrees | 1.7923 | 3/3 | 2/3 |
+| Q06: How many farm plots lie within 50 metres of the canal (touching the 50 m buffer counts)? | buffer in metres + overlay; canal and plots in different CRSs | 12 | 0/3 | 0/3 |
+| Q07: Which village contains the most farm plots? | spatial join + group count; CRS mismatch | Bhawal | 0/3 | 0/3 |
+| Q08: What is the total area in hectares of the farm plots in Kaliakoir village? | filter + join + area; includes the invalid plot | 1.8627 | 0/3 | 0/3 |
+| Q09: How many soil samples fall inside wheat plots? | point-in-polygon | 4 | 0/3 | 0/3 |
+| Q10: What is the mean area in hectares of the plots that received at least 120 kg N/ha? | numeric filter + mean area | 0.256 | 0/3 | 0/3 |
+| Q11: What is the average of the mean NDVI values of the wheat plots? | zonal statistics + aggregation | 0.5901 | 0/3 | 0/3 |
+| Q12: Which plot (plot_id) has the highest mean NDVI? | zonal statistics + argmax | P08 | 0/3 | 0/3 |
+
+### Failure types (runs with a wrong or missing answer)
+
+| Failure type | off | warn |
+|---|---|---|
+| answer_not_in_tool_output | 1 | 1 |
+| crs_mismatch | 5 | 3 |
+| llm_error | 2 | 1 |
+| measured_in_degrees | 3 | 3 |
+| no_answer_max_steps | 1 | 6 |
+| wrong_workflow | 14 | 13 |
+

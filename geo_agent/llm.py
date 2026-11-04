@@ -59,13 +59,14 @@ class OllamaBackend:
 
     def __init__(self, model: str = "qwen2.5:3b", host: str = "http://localhost:11434",
                  temperature: float = 0.2, seed: int | None = None, timeout: float = 300.0,
-                 num_ctx: int = 8192):
+                 num_ctx: int = 8192, text_fallback: bool = True):
         self.model = model
         self.host = host.rstrip("/")
         self.temperature = temperature
         self.seed = seed
         self.timeout = timeout
         self.num_ctx = num_ctx
+        self.text_fallback = text_fallback
         self.name = f"ollama:{model}"
 
     def _post(self, path: str, payload: dict[str, Any]) -> dict[str, Any]:
@@ -99,7 +100,26 @@ class OllamaBackend:
         content = msg.get("content") or ""
         if not calls:
             calls = parse_text_tool_calls(content)
+        if not calls and not content.strip() and data.get("eval_count", 0) > 0 and self.text_fallback:
+            # The model generated tokens but Ollama returned nothing: usually a tool call
+            # Ollama could not parse (e.g. an invented tool name). Ask again without the
+            # tool-call channel and read the call from plain text, so that a bad call
+            # reaches the agent and gets an error message instead of silently vanishing.
+            data = self._text_fallback(messages, tools, options)
+            content = data.get("message", {}).get("content") or ""
+            calls = parse_text_tool_calls(content)
         return Reply(content=content, tool_calls=calls, raw=data)
+
+    def _text_fallback(self, messages: list[dict[str, Any]], tools: list[dict[str, Any]],
+                       options: dict[str, Any]) -> dict[str, Any]:
+        names = ", ".join(t["function"]["name"] for t in tools)
+        hint = ("Your last reply was empty. Either write the final line 'ANSWER: <value> <unit>', or call ONE "
+                "tool by writing only this JSON: {\"name\": \"<tool>\", \"arguments\": {...}}. "
+                f"Tool names: {names}.")
+        data = self._post("/api/chat", {"model": self.model, "messages": messages + [{"role": "user", "content": hint}],
+                                        "stream": False, "options": options})
+        data["text_fallback"] = True
+        return data
 
 
 class ScriptedBackend:

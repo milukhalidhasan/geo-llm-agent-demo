@@ -61,7 +61,7 @@ def grounded(answer: str | None, steps: list[dict[str, Any]], kind: str) -> bool
     results = [s.get("result") for s in steps if s["type"] == "tool" and "result" in s]
     if kind == "name":
         blob = json.dumps(results, default=str).lower()
-        token = re.sub(r"[^\w]", "", answer.split()[0].lower()) if answer.split() else ""
+        token = answer.split()[0].lower().strip(".,;:!?'\"*`()") if answer.split() else ""
         return bool(token) and token in blob
     val = parse_number(answer)
     if val is None:
@@ -85,6 +85,8 @@ def classify(res: RunResult, correct: bool | None, is_grounded: bool | None) -> 
         return "llm_error"
     if res.stop_reason == "max_steps":
         return "no_answer_max_steps"
+    if (res.answer_text or "").strip().lower() in {"none", "null", "n/a", "unknown", ""}:
+        return "gave_up"
     if correct is None:
         return "unparseable_answer"
     tool_steps = [s for s in res.steps if s["type"] == "tool"]
@@ -186,6 +188,7 @@ def main() -> None:
     ap.add_argument("--max-steps", type=int, default=12)
     ap.add_argument("--temperature", type=float, default=0.2)
     ap.add_argument("--report-only", action="store_true", help="only rebuild summary.md from runs.csv")
+    ap.add_argument("--resume", action="store_true", help="keep runs already in runs.csv; run only the missing ones")
     args = ap.parse_args()
 
     RESULTS.mkdir(exist_ok=True)
@@ -199,14 +202,24 @@ def main() -> None:
     refs = reference_answers()
     qs = [q for q in QUESTIONS if not args.questions or q.qid in args.questions]
     rows: list[dict[str, Any]] = []
+    done: set[tuple[str, str, int]] = set()
+    if args.resume and csv_path.exists():
+        # Keep finished runs from an interrupted evaluation and only run the missing ones.
+        with csv_path.open(encoding="utf-8") as fh:
+            rows = list(csv.DictReader(fh))
+        done = {(r["mode"], r["qid"], int(r["run"])) for r in rows}
+        print(f"Resuming: {len(rows)} runs already in {csv_path.name}", flush=True)
     total = len(qs) * args.runs * len(args.modes)
     t0 = time.time()
-    with csv_path.open("w", newline="", encoding="utf-8") as fh:
+    with csv_path.open("a" if done else "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS)
-        w.writeheader()
+        if not done:
+            w.writeheader()
         for mode in args.modes:
             for q in qs:
                 for run in range(args.runs):
+                    if (mode, q.qid, run) in done:
+                        continue
                     row = run_one(args.model, mode, q, run, refs[q.qid], args.max_steps, args.temperature)
                     rows.append(row)
                     w.writerow(row)

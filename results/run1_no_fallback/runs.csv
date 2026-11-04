@@ -1,0 +1,73 @@
+mode,qid,run,model,finished,correct,answer,reference,failure,grounded,n_tool_calls,n_tool_errors,checks_fired,geo_crs_unfixed,text_tool_calls,stop_reason,elapsed_s,trace
+off,Q01,0,qwen2.5:3b,True,True,24,24,,True,1,0,0,False,0,answer,9.21,traces/eval/off_Q01_r0.json
+off,Q01,1,qwen2.5:3b,True,True,24,24,,True,1,0,0,False,0,answer,8.35,traces/eval/off_Q01_r1.json
+off,Q01,2,qwen2.5:3b,True,True,24,24,,True,1,0,0,False,0,answer,8.4,traces/eval/off_Q01_r2.json
+off,Q02,0,qwen2.5:3b,True,False,56781.81 m²,4326,wrong_workflow,True,3,0,1,False,0,answer,56.72,traces/eval/off_Q02_r0.json
+off,Q02,1,qwen2.5:3b,True,False,5.678180905259124 ha,4326,wrong_workflow,True,3,0,1,False,0,answer,57.62,traces/eval/off_Q02_r1.json
+off,Q02,2,qwen2.5:3b,True,False,5.678180905259124 hectares,4326,wrong_workflow,True,4,0,1,False,0,answer,75.71,traces/eval/off_Q02_r2.json
+off,Q03,0,qwen2.5:3b,True,False,5.14e-10 ha,1,measured_in_degrees,True,4,0,2,True,0,answer,73.78,traces/eval/off_Q03_r0.json
+off,Q03,1,qwen2.5:3b,True,False,24,1,wrong_workflow,True,3,0,0,False,0,answer,46.24,traces/eval/off_Q03_r1.json
+off,Q03,2,qwen2.5:3b,True,True,1,1,,True,1,0,0,False,0,answer,20.92,traces/eval/off_Q03_r2.json
+off,Q04,0,qwen2.5:3b,False,False,,2.9815,no_answer_max_steps,,2,0,0,False,0,max_steps,126.85,traces/eval/off_Q04_r0.json
+off,Q04,1,qwen2.5:3b,False,False,,2.9815,no_answer_max_steps,,1,0,0,False,0,max_steps,118.61,traces/eval/off_Q04_r1.json
+off,Q04,2,qwen2.5:3b,False,False,,2.9815,no_answer_max_steps,,1,0,0,False,0,max_steps,130.76,traces/eval/off_Q04_r2.json
+off,Q05,0,qwen2.5:3b,True,True,1.792277115093599 km,1.7923,,True,3,0,1,True,0,answer,95.89,traces/eval/off_Q05_r0.json
+off,Q05,1,qwen2.5:3b,True,True,1.792277115093599 km,1.7923,,True,3,0,1,True,0,answer,69.24,traces/eval/off_Q05_r1.json
+off,Q05,2,qwen2.5:3b,True,True,1.792277115093599 <unit: km>,1.7923,,True,4,0,1,True,0,answer,73.86,traces/eval/off_Q05_r2.json
+off,Q06,0,qwen2.5:3b,True,False,0,12,crs_mismatch,True,3,0,3,False,0,answer,28.08,traces/eval/off_Q06_r0.json
+off,Q06,1,qwen2.5:3b,True,False,0,12,crs_mismatch,True,3,0,3,False,0,answer,30.24,traces/eval/off_Q06_r1.json
+off,Q06,2,qwen2.5:3b,True,False,0,12,crs_mismatch,True,3,0,3,False,0,answer,30.97,traces/eval/off_Q06_r2.json
+off,Q07,0,qwen2.5:3b,False,False,,Bhawal,no_answer_max_steps,,1,0,3,False,0,max_steps,172.35,traces/eval/off_Q07_r0.json
+off,Q07,1,qwen2.5:3b,False,False,,Bhawal,no_answer_max_steps,,4,0,3,False,0,max_steps,154.66,traces/eval/off_Q07_r1.json
+off,Q07,2,qwen2.5:3b,False,False,,Bhawal,no_answer_max_steps,,1,0,3,False,0,max_steps,157.9,traces/eval/off_Q07_r2.json
+off,Q08,0,qwen2.5:3b,False,False,,1.8627,no_answer_max_steps,,1,0,0,False,0,max_steps,109.27,traces/eval/off_Q08_r0.json
+off,Q08,1,qwen2.5:3b,False,False,,1.8627,no_answer_max_steps,,1,0,0,False,0,max_steps,127.01,traces/eval/off_Q08_r1.json
+off,Q08,2,qwen2.5:3b,False,False,,1.8627,no_answer_max_steps,,1,0,0,False,0,max_steps,120.2,traces/eval/off_Q08_r2.json
+off,Q09,0,qwen2.5:3b,True,False,13,4,wrong_workflow,True,4,1,2,False,0,answer,69.71,traces/eval/off_Q09_r0.json
+off,Q09,1,qwen2.5:3b,True,False,13,4,wrong_workflow,True,4,1,2,False,0,answer,74.83,traces/eval/off_Q09_r1.json
+off,Q09,2,qwen2.5:3b,True,False,13,4,wrong_workflow,True,4,1,2,False,0,answer,58.66,traces/eval/off_Q09_r2.json
+off,Q10,0,qwen2.5:3b,True,False,0.00002497 ha,0.256,measured_in_degrees,True,2,0,2,True,0,answer,33.52,traces/eval/off_Q10_r0.json
+off,Q10,1,qwen2.5:3b,True,False,0.5 ha,0.256,answer_not_in_tool_output,False,3,2,0,False,0,answer,35.12,traces/eval/off_Q10_r1.json
+off,Q10,2,qwen2.5:3b,True,False,0.0002497112512140373 ha,0.256,measured_in_degrees,True,3,1,2,True,0,answer,47.19,traces/eval/off_Q10_r2.json
+off,Q11,0,qwen2.5:3b,True,False,0.6279 mean_ndvi,0.5901,wrong_workflow,True,2,0,1,False,0,answer,49.07,traces/eval/off_Q11_r0.json
+off,Q11,1,qwen2.5:3b,True,False,0.36704567074775696,0.5901,wrong_workflow,True,3,1,0,False,0,answer,42.63,traces/eval/off_Q11_r1.json
+off,Q11,2,qwen2.5:3b,True,False,0.36704567074775696,0.5901,wrong_workflow,True,3,1,0,False,0,answer,45.72,traces/eval/off_Q11_r2.json
+off,Q12,0,qwen2.5:3b,True,False,0.7828,P08,answer_not_in_tool_output,False,2,1,1,False,0,answer,59.74,traces/eval/off_Q12_r0.json
+off,Q12,1,qwen2.5:3b,True,False,0.7828 NDVI,P08,answer_not_in_tool_output,False,4,1,1,False,0,answer,206.91,traces/eval/off_Q12_r1.json
+off,Q12,2,qwen2.5:3b,True,False,None,P08,answer_not_in_tool_output,False,5,5,0,False,0,answer,94.51,traces/eval/off_Q12_r2.json
+warn,Q01,0,qwen2.5:3b,True,True,24,24,,True,1,0,0,False,0,answer,8.69,traces/eval/warn_Q01_r0.json
+warn,Q01,1,qwen2.5:3b,True,True,24,24,,True,1,0,0,False,0,answer,8.22,traces/eval/warn_Q01_r1.json
+warn,Q01,2,qwen2.5:3b,True,True,24,24,,True,1,0,0,False,0,answer,8.23,traces/eval/warn_Q01_r2.json
+warn,Q02,0,qwen2.5:3b,True,False,57981.81 m²,4326,wrong_workflow,True,6,1,1,False,0,answer,145.67,traces/eval/warn_Q02_r0.json
+warn,Q02,1,qwen2.5:3b,False,False,,4326,llm_error,,3,0,1,False,0,llm_error,1862.87,traces/eval/warn_Q02_r1.json
+warn,Q02,2,qwen2.5:3b,True,False,5.798180905257553 ha,4326,wrong_workflow,True,9,2,1,False,0,answer,203.11,traces/eval/warn_Q02_r2.json
+warn,Q03,0,qwen2.5:3b,False,False,,1,no_answer_max_steps,,4,0,2,True,0,max_steps,150.48,traces/eval/warn_Q03_r0.json
+warn,Q03,1,qwen2.5:3b,True,False,24,1,wrong_workflow,True,3,0,0,False,0,answer,45.54,traces/eval/warn_Q03_r1.json
+warn,Q03,2,qwen2.5:3b,True,True,1,1,,True,1,0,0,False,0,answer,28.78,traces/eval/warn_Q03_r2.json
+warn,Q04,0,qwen2.5:3b,False,False,,2.9815,no_answer_max_steps,,2,0,0,False,0,max_steps,120.73,traces/eval/warn_Q04_r0.json
+warn,Q04,1,qwen2.5:3b,False,False,,2.9815,no_answer_max_steps,,1,0,0,False,0,max_steps,138.31,traces/eval/warn_Q04_r1.json
+warn,Q04,2,qwen2.5:3b,False,False,,2.9815,no_answer_max_steps,,1,0,0,False,0,max_steps,136.64,traces/eval/warn_Q04_r2.json
+warn,Q05,0,qwen2.5:3b,True,True,1.792 km,1.7923,,True,3,0,1,True,0,answer,71.44,traces/eval/warn_Q05_r0.json
+warn,Q05,1,qwen2.5:3b,True,True,1.792 km,1.7923,,True,3,0,1,True,0,answer,32.28,traces/eval/warn_Q05_r1.json
+warn,Q05,2,qwen2.5:3b,True,True,1.792 km,1.7923,,True,3,0,1,True,0,answer,33.86,traces/eval/warn_Q05_r2.json
+warn,Q06,0,qwen2.5:3b,True,False,0,12,crs_mismatch,True,3,0,3,False,0,answer,32.89,traces/eval/warn_Q06_r0.json
+warn,Q06,1,qwen2.5:3b,True,False,0,12,crs_mismatch,True,3,0,3,False,0,answer,32.03,traces/eval/warn_Q06_r1.json
+warn,Q06,2,qwen2.5:3b,True,False,0,12,crs_mismatch,True,3,0,3,False,0,answer,31.44,traces/eval/warn_Q06_r2.json
+warn,Q07,0,qwen2.5:3b,False,False,,Bhawal,no_answer_max_steps,,1,0,3,False,0,max_steps,114.88,traces/eval/warn_Q07_r0.json
+warn,Q07,1,qwen2.5:3b,False,False,,Bhawal,no_answer_max_steps,,1,0,3,False,0,max_steps,118.85,traces/eval/warn_Q07_r1.json
+warn,Q07,2,qwen2.5:3b,False,False,,Bhawal,no_answer_max_steps,,1,0,3,False,0,max_steps,181.07,traces/eval/warn_Q07_r2.json
+warn,Q08,0,qwen2.5:3b,False,False,,1.8627,no_answer_max_steps,,1,0,0,False,0,max_steps,171.51,traces/eval/warn_Q08_r0.json
+warn,Q08,1,qwen2.5:3b,False,False,,1.8627,no_answer_max_steps,,1,0,0,False,0,max_steps,134.65,traces/eval/warn_Q08_r1.json
+warn,Q08,2,qwen2.5:3b,False,False,,1.8627,no_answer_max_steps,,1,0,0,False,0,max_steps,159.55,traces/eval/warn_Q08_r2.json
+warn,Q09,0,qwen2.5:3b,True,False,13,4,wrong_workflow,True,3,1,1,False,0,answer,39.17,traces/eval/warn_Q09_r0.json
+warn,Q09,1,qwen2.5:3b,True,False,13,4,wrong_workflow,True,3,1,1,False,0,answer,40.05,traces/eval/warn_Q09_r1.json
+warn,Q09,2,qwen2.5:3b,True,False,13,4,wrong_workflow,True,3,1,1,False,0,answer,37.44,traces/eval/warn_Q09_r2.json
+warn,Q10,0,qwen2.5:3b,True,False,2.816098848648267 ha,0.256,measured_in_degrees,True,4,0,2,True,0,answer,65.12,traces/eval/warn_Q10_r0.json
+warn,Q10,1,qwen2.5:3b,True,False,0.5 ha,0.256,answer_not_in_tool_output,False,3,2,0,False,0,answer,46.87,traces/eval/warn_Q10_r1.json
+warn,Q10,2,qwen2.5:3b,True,False,2.5e-10 ha,0.256,measured_in_degrees,True,3,1,2,True,0,answer,48.49,traces/eval/warn_Q10_r2.json
+warn,Q11,0,qwen2.5:3b,True,False,0.6335575,0.5901,wrong_workflow,True,3,0,1,False,0,answer,58.51,traces/eval/warn_Q11_r0.json
+warn,Q11,1,qwen2.5:3b,True,False,0.36704567074775696,0.5901,wrong_workflow,True,3,1,0,False,0,answer,35.23,traces/eval/warn_Q11_r1.json
+warn,Q11,2,qwen2.5:3b,True,False,0.36704567074775696,0.5901,wrong_workflow,True,3,1,0,False,0,answer,32.55,traces/eval/warn_Q11_r2.json
+warn,Q12,0,qwen2.5:3b,True,False,0.6188,P08,answer_not_in_tool_output,False,2,1,1,False,0,answer,61.32,traces/eval/warn_Q12_r0.json
+warn,Q12,1,qwen2.5:3b,False,False,,P08,no_answer_max_steps,,4,1,1,False,0,max_steps,207.1,traces/eval/warn_Q12_r1.json
+warn,Q12,2,qwen2.5:3b,True,False,None,P08,answer_not_in_tool_output,False,5,5,0,False,0,answer,159.93,traces/eval/warn_Q12_r2.json
